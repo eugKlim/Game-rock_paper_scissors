@@ -66,10 +66,14 @@ const Game = () => {
 
       {!handGame && (
         <motion.div
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.4, ease: 'easeOut' }}
-          className={`max-w-96 mx-auto pb-10 pt-5 px-6 bg-white text-black rounded-4xl shadow-2xl shadow-purple-950`}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            type: 'spring',
+            stiffness: 120,
+            damping: 12,
+          }}
+          className={`max-w-96 mx-auto pb-10 pt-5 px-6 bg-white text-black rounded-4xl md:shadow-2xl md:shadow-purple-950`}
         >
           <GameWidget
             playerWin={playerWin}
